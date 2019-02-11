@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.BrowseFragment">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/b_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:title="@string/b_title"
+        app:titleTextColor="@android:color/white"></android.support.v7.widget.Toolbar>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="60dp"
+        android:id="@+id/B_Recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp"></android.support.v7.widget.RecyclerView>
+
+
+</FrameLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wallpaperhub.akaks09developers.wallpaperhub">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Activity.BrowseFullView"></activity>
+        <activity android:name=".Category_Activity.wildlife" />
+        <activity android:name=".Category_Activity.water" />
+        <activity android:name=".Category_Activity.road" />
+        <activity android:name=".Category_Activity.portrait" />
+        <activity android:name=".Category_Activity.old" />
+        <activity android:name=".Category_Activity.night" />
+        <activity android:name=".Category_Activity.adventure" />
+        <activity android:name=".Category_Activity.music" />
+        <activity android:name=".Category_Activity.nature" />
+        <activity android:name=".Category_Activity.baby" />
+        <activity android:name=".Category_Activity.friend" />
+        <activity android:name=".Category_Activity.food" />
+        <activity android:name=".Category_Activity.flowers" />
+        <activity android:name=".Activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.weekFullView" />
+        <activity android:name=".Activity.BrowseActivity" />
+        <activity android:name=".Activity.Home_Page_Activity" />
+    </application>
+
+</manifest>

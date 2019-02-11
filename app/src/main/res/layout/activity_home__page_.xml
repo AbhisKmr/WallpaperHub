@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Home_Page_Activity">
+
+    <ScrollView
+        android:id="@+id/scr"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="#2979FF"
+                    android:textAlignment="center"
+                    android:theme="@style/AppTheme"
+                    app:title="@string/app_name"
+                    app:titleTextColor="@android:color/white">
+
+                </android.support.v7.widget.Toolbar>
+
+
+            </LinearLayout>
+
+
+            <!--wallpaper of the day-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp">
+
+                <ImageView
+                    android:id="@+id/wOtd"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="0dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/evan" />
+
+                <RelativeLayout
+                    android:id="@+id/rel1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignBottom="@+id/wOtd"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:id="@+id/wrdTv"
+                        android:layout_width="247dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="100dp"
+                        android:layout_marginEnd="155dp"
+                        android:layout_marginRight="155dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="WALLPAPER OF THE DAY"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="87dp"
+                        android:layout_height="2dp"
+                        android:layout_alignStart="@+id/wrdTv"
+                        android:layout_alignLeft="@+id/wrdTv"
+                        android:layout_alignEnd="@+id/wrdTv"
+                        android:layout_alignRight="@+id/wrdTv"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="83dp"
+                        android:layout_marginRight="83dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="@android:color/white" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/white">
+
+                <!--week to 7 -->
+                <TextView
+                    android:id="@+id/weekTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/week_top_7"
+                    android:textColor="#212121"
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+
+                <!--first horizontal-->
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/weekRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/weekTxt"
+                    android:layout_margin="10dp"
+                    app:reverseLayout="false">
+
+                </android.support.v7.widget.RecyclerView>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/black">
+
+                <!--category text-->
+                <TextView
+                    android:id="@+id/cetTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/category"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+
+                <!--second horizontal-->
+                <!--<android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cetTxt"
+                    android:layout_margin="10dp">
+
+                </android.support.v7.widget.RecyclerView>-->
+                <RelativeLayout
+                    android:layout_margin="10dp"
+                    android:layout_below="@+id/cetTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:textAlignment="center"
+                        android:id="@+id/flr"
+                        android:scaleType="center"
+                        android:src="@drawable/flower"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="FLOWERS"
+                        android:textStyle="bold"
+                        android:textSize="25dp"
+                        android:textColor="@android:color/white"
+                        android:layout_alignLeft="@+id/flr"
+                        android:layout_alignTop="@+id/flr"
+                        android:layout_alignRight="@+id/flr"
+                        android:layout_alignBottom="@+id/flr"
+                        android:gravity="center"/>
+
+                    <ImageView
+                        android:layout_below="@+id/flr"
+                        android:id="@+id/food"
+                        android:scaleType="center"
+                        android:src="@drawable/food"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="FOODGASM"
+                        android:textStyle="bold"
+                        android:textSize="25dp"
+                        android:textColor="@android:color/white"
+                        android:layout_alignLeft="@+id/food"
+                        android:layout_alignTop="@+id/food"
+                        android:layout_alignRight="@+id/food"
+                        android:layout_alignBottom="@+id/food"
+                        android:gravity="center"/>
+
+                    <ImageView
+                        android:layout_below="@+id/food"
+                        android:id="@+id/frnd"
+                        android:scaleType="center"
+                        android:src="@drawable/friends"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="FRIENDS 4 EVER"
+                        android:textStyle="bold"
+                        android:textSize="25dp"
+                        android:textColor="@android:color/white"
+                        android:layout_alignLeft="@+id/frnd"
+                        android:layout_alignTop="@+id/frnd"
+                        android:layout_alignRight="@+id/frnd"
+                        android:layout_alignBottom="@+id/frnd"
+                        android:gravity="center"/>
+
+                    <ImageView
+                        android:layout_below="@+id/frnd"
+                        android:id="@+id/baby"
+                        android:scaleType="center"
+                        android:src="@drawable/baby"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LITTLE ONES"
+                        android:textStyle="bold"
+                        android:textSize="25dp"
+                        android:textColor="@android:color/white"
+                        android:layout_alignLeft="@+id/baby"
+                        android:layout_alignTop="@+id/baby"
+                        android:layout_alignRight="@+id/baby"
+                        android:layout_alignBottom="@+id/baby"
+                        android:gravity="center"/>
+
+                    <ImageView
+                        android:layout_below="@+id/baby"
+                        android:id="@+id/ntr"
+                        android:scaleType="center"
+                        android:src="@drawable/nature"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MOTHER NATURE"
+                        android:textStyle="bold"
+                        android:textSize="25dp"
+                        android:textColor="@android:color/white"
+                        android:layout_alignLeft="@+id/ntr"
+                        android:layout_alignTop="@+id/ntr"
+                        android:layout_alignRight="@+id/ntr"
+                        android:layout_alignBottom="@+id/ntr"
+                        android:gravity="center"/>
+
+                    <ImageView
+                        android:layout_below="@+id/ntr"
+                        android:id="@+id/music"
+                        android:scaleType="center"
+                        android:src="@drawable/music"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MUSIC IS LIFE"
+                        android:textStyle="bold"
+                        android:textSize="25dp"
+                        android:textColor="@android:color/white"
+                        android:layout_alignLeft="@+id/music"
+                        android:layout_alignTop="@+id/music"
+                        android:layout_alignRight="@+id/music"
+                        android:layout_alignBottom="@+id/music"
+                        android:gravity="center"/>
+
+                    <ImageView
+                        android:layout_below="@+id/music"
+                        android:id="@+id/trll"
+                        android:scaleType="center"
+                        android:src="@drawable/adventure"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NAVER LOOK BACK"
+                        android:textStyle="bold"
+                        android:textSize="25dp"
+                        android:textColor="@android:color/white"
+                        android:layout_alignLeft="@+id/trll"
+                        android:layout_alignTop="@+id/trll"
+                        android:layout_alignRight="@+id/trll"
+                        android:layout_alignBottom="@+id/trll"
+                        android:gravity="center"/>
+
+                    <ImageView
+                        android:layout_below="@+id/trll"
+                        android:id="@+id/nght"
+                        android:scaleType="center"
+                        android:src="@drawable/night"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NIGHT LIGHT"
+                        android:textStyle="bold"
+                        android:textSize="25dp"
+                        android:textColor="@android:color/white"
+                        android:layout_alignLeft="@+id/nght"
+                        android:layout_alignTop="@+id/nght"
+                        android:layout_alignRight="@+id/nght"
+                        android:layout_alignBottom="@+id/nght"
+                        android:gravity="center"/>
+
+                    <ImageView
+                        android:layout_below="@+id/nght"
+                        android:id="@+id/oldgld"
+                        android:scaleType="center"
+                        android:src="@drawable/old"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="OLD IS GOLD"
+                        android:textStyle="bold"
+                        android:textSize="25dp"
+                        android:textColor="@android:color/white"
+                        android:layout_alignLeft="@+id/oldgld"
+                        android:layout_alignTop="@+id/oldgld"
+                        android:layout_alignRight="@+id/oldgld"
+                        android:layout_alignBottom="@+id/oldgld"
+                        android:gravity="center"/>
+
+                    <ImageView
+                        android:layout_below="@+id/oldgld"
+                        android:id="@+id/pp"
+                        android:scaleType="center"
+                        android:src="@drawable/people"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PEOPLE | PORTRAIT"
+                        android:textStyle="bold"
+                        android:textSize="25dp"
+                        android:textColor="@android:color/white"
+                        android:layout_alignLeft="@+id/pp"
+                        android:layout_alignTop="@+id/pp"
+                        android:layout_alignRight="@+id/pp"
+                        android:layout_alignBottom="@+id/pp"
+                        android:gravity="center"/>
+
+                    <ImageView
+                        android:layout_below="@+id/pp"
+                        android:id="@+id/road"
+                        android:scaleType="center"
+                        android:src="@drawable/road"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ROAD"
+                        android:textStyle="bold"
+                        android:textSize="25dp"
+                        android:textColor="@android:color/white"
+                        android:layout_alignLeft="@+id/road"
+                        android:layout_alignTop="@+id/road"
+                        android:layout_alignRight="@+id/road"
+                        android:layout_alignBottom="@+id/road"
+                        android:gravity="center"/>
+
+                    <ImageView
+                        android:layout_below="@+id/road"
+                        android:id="@+id/undwtr"
+                        android:scaleType="center"
+                        android:src="@drawable/water"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="UNDERWATER"
+                        android:textStyle="bold"
+                        android:textSize="25dp"
+                        android:textColor="@android:color/white"
+                        android:layout_alignLeft="@+id/undwtr"
+                        android:layout_alignTop="@+id/undwtr"
+                        android:layout_alignRight="@+id/undwtr"
+                        android:layout_alignBottom="@+id/undwtr"
+                        android:gravity="center"/>
+
+                    <ImageView
+                        android:layout_below="@+id/undwtr"
+                        android:id="@+id/wildlf"
+                        android:scaleType="center"
+                        android:src="@drawable/wildlife"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="WILDLIFE"
+                        android:textStyle="bold"
+                        android:textSize="25dp"
+                        android:textColor="@android:color/white"
+                        android:layout_alignLeft="@+id/wildlf"
+                        android:layout_alignTop="@+id/wildlf"
+                        android:layout_alignRight="@+id/wildlf"
+                        android:layout_alignBottom="@+id/wildlf"
+                        android:gravity="center"/>
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
