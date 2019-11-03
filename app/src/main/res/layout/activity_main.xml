@@ -9,7 +9,6 @@
     tools:context=".Activity.MainActivity">
 
 
-
     <FrameLayout
         android:id="@+id/main_frame"
         android:layout_above="@+id/main_nav"
