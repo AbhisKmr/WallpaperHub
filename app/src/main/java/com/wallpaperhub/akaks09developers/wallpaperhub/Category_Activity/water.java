@@ -28,7 +28,7 @@ public class water extends AppCompatActivity {
     private RequestQueue requestQueue;
     private List<CategoryModel> categoryList;
     public RecyclerView recyclerView;
-//    Some randome comment
+//    Some randome commenaskjdfhkat
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
