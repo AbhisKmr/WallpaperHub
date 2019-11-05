@@ -31,7 +31,7 @@
         android:backgroundTint="@android:drawable/screen_background_dark_transparent"
         android:elevation="6dp"
         android:src="@drawable/ic_share"
-        android:visibility="invisible"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/fab_download"
         app:layout_constraintEnd_toEndOf="@+id/fab_download"
         app:pressedTranslationZ="12dp"

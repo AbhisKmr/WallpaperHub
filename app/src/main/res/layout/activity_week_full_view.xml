@@ -7,46 +7,60 @@
     android:background="@android:color/black"
     tools:context=".Activity.weekFullView">
 
-    <LinearLayout
-        android:elevation="2dp"
-        android:layout_width="match_parent"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_setWallpaper"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:drawable/screen_background_dark_transparent"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/weekFullV"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_gravity="bottom|end"
+        android:backgroundTint="@android:drawable/screen_background_dark_transparent"
+        android:elevation="6dp"
+        android:src="@drawable/ic_wallpaper"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/fab_share"
+        app:layout_constraintEnd_toEndOf="@+id/fab_share"
+        app:pressedTranslationZ="12dp"
+        tools:targetApi="lollipop" />
 
-        <Button
-            android:id="@+id/downloadButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:layout_margin="8dp"
-            android:text="Download"
-            android:textColor="@android:color/white" />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:backgroundTint="@android:drawable/screen_background_dark_transparent"
+        android:elevation="6dp"
+        android:src="@drawable/ic_share"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/fab_download"
+        app:layout_constraintEnd_toEndOf="@+id/fab_download"
+        app:pressedTranslationZ="12dp"
+        tools:targetApi="lollipop" />
 
-        <Button
-            android:id="@+id/shareButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:layout_margin="8dp"
-            android:text="Share"
-            android:textColor="@android:color/white" />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:backgroundTint="@android:drawable/screen_background_dark_transparent"
+        android:elevation="6dp"
+        android:src="@drawable/ic_file_download"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/fab_more"
+        app:layout_constraintEnd_toEndOf="@+id/fab_more"
+        app:pressedTranslationZ="12dp"
+        tools:targetApi="lollipop" />
 
-        <Button
-            android:id="@+id/setButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:layout_margin="8dp"
-            android:text="Set Wallpaper"
-            android:textColor="@android:color/white" />
-
-
-    </LinearLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:focusableInTouchMode="false"
+        android:id="@+id/fab_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:backgroundTint="@android:drawable/screen_background_dark_transparent"
+        android:elevation="6dp"
+        android:src="@drawable/ic_more_vert_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
         android:id="@+id/weekFullV"
