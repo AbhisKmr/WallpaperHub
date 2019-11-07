@@ -17,14 +17,14 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:background="#2979FF"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
                 <android.support.v7.widget.Toolbar
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="?attr/actionBarSize"
-                    android:background="#2979FF"
                     android:textAlignment="center"
                     android:theme="@style/AppTheme"
                     app:title="@string/app_name"
@@ -288,7 +288,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="NAVER LOOK BACK"
+                        android:text="NEVER LOOK BACK"
                         android:textStyle="bold"
                         android:textSize="25dp"
                         android:textColor="@android:color/white"

@@ -45,7 +45,7 @@ import java.util.List;
 public class HomeFragment extends Fragment {
     private List<weekModel> weekLst;
     private RecyclerView recyclerView;
-    ImageView flrImg, foddImg, frndImg, babyImg, ntrImg, mscImg, trvlImg, nghtImg, oldImg, prtrImg, roadImg, wtrImg, wildImg;
+    ImageView wOtd,flrImg, foddImg, frndImg, babyImg, ntrImg, mscImg, trvlImg, nghtImg, oldImg, prtrImg, roadImg, wtrImg, wildImg;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
