@@ -6,21 +6,20 @@ import android.app.WallpaperManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.android.volley.RequestQueue;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.wallpaperhub.akaks09developers.wallpaperhub.R;
 
 import java.io.IOException;
@@ -29,7 +28,7 @@ public class weekFullView extends AppCompatActivity {
     FloatingActionButton fab_more, Fab_download, Fab_Share, FabSetW;
     Animation FabOpen, FabClose, FabRClockwise, FabRAnticlockwise;
     boolean isOpen = false;
-    private static int REQUEST_CODE=1;
+    private static int REQUEST_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +40,7 @@ public class weekFullView extends AppCompatActivity {
         }, REQUEST_CODE);
 
 
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         final String img_url = getIntent().getExtras().getString("img_url");
         final ImageView imageView = findViewById(R.id.weekFullV);
@@ -121,7 +120,6 @@ public class weekFullView extends AppCompatActivity {
 
             }
         });
-
     }
 
 }

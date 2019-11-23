@@ -2,16 +2,15 @@ package com.wallpaperhub.akaks09developers.wallpaperhub.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -53,9 +52,9 @@ public class weekAdapter extends RecyclerView.Adapter<weekAdapter.W_ItemHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull W_ItemHolder holder, int position) {
-        //holder.LikeTv.setText(mData.get(position).getLikes());
-        //holder.DownloadTv.setText(mData.get(position).getDownloads());
-        //holder.DatTv.setText(mData.get(position).getDay());
+//        holder.LikeTv.setText(mData.get(position).getLikes());
+//        holder.DownloadTv.setText(mData.get(position).getDownloads());
+//        holder.DatTv.setText(mData.get(position).getDay());
         Glide.with(mContext).load(mData.get(position).getImg_url()).apply(options).into(holder.imageView);
 
     }
@@ -66,7 +65,7 @@ public class weekAdapter extends RecyclerView.Adapter<weekAdapter.W_ItemHolder> 
     }
 
     public static class W_ItemHolder extends RecyclerView.ViewHolder {
-        //TextView LikeTv, DownloadTv, DatTv;
+//        TextView LikeTv, DownloadTv, DatTv;
         ImageView imageView;
         LinearLayout cardView;
 
@@ -74,6 +73,7 @@ public class weekAdapter extends RecyclerView.Adapter<weekAdapter.W_ItemHolder> 
             super(itemView);
             imageView = itemView.findViewById(R.id.weekImg);
             cardView = itemView.findViewById(R.id.weekCard);
+//            LikeTv = itemView.findViewById(R.id.)
         }
     }
 }

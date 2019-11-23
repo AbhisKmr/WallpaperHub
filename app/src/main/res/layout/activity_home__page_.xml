@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <android.support.v7.widget.Toolbar
+                <androidx.appcompat.widget.Toolbar
                     android:layout_width="wrap_content"
                     android:layout_height="?attr/actionBarSize"
                     android:textAlignment="center"
@@ -30,7 +30,7 @@
                     app:title="@string/app_name"
                     app:titleTextColor="@android:color/white">
 
-                </android.support.v7.widget.Toolbar>
+                </androidx.appcompat.widget.Toolbar>
 
 
             </LinearLayout>
@@ -113,7 +113,7 @@
                     android:textStyle="bold"/>
 
                 <!--first horizontal-->
-                <android.support.v7.widget.RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/weekRecycler"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -121,7 +121,7 @@
                     android:layout_margin="10dp"
                     app:reverseLayout="false">
 
-                </android.support.v7.widget.RecyclerView>
+                </androidx.recyclerview.widget.RecyclerView>
 
 
             </RelativeLayout>
