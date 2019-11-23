@@ -1,35 +1,22 @@
 package com.wallpaperhub.akaks09developers.wallpaperhub.Activity;
 
-import android.app.Activity;
-import android.app.Notification;
-import android.support.annotation.NonNull;
-import android.support.design.internal.BottomNavigationItemView;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.Volley;
-import com.wallpaperhub.akaks09developers.wallpaperhub.Adapter.weekAdapter;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.wallpaperhub.akaks09developers.wallpaperhub.Model.weekModel;
 import com.wallpaperhub.akaks09developers.wallpaperhub.R;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
     private RequestQueue requestQueue;
     private List<weekModel> weekLst;
     private RecyclerView recyclerView;
-    //////////////
     private BottomNavigationView mNavView;
     private FrameLayout frameLayout;
     private HomeFragment homeFragment;

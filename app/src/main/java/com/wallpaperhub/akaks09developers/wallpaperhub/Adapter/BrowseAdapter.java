@@ -2,21 +2,19 @@ package com.wallpaperhub.akaks09developers.wallpaperhub.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
+
+import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.wallpaperhub.akaks09developers.wallpaperhub.Activity.BrowseFullView;
-import com.wallpaperhub.akaks09developers.wallpaperhub.Activity.weekFullView;
 import com.wallpaperhub.akaks09developers.wallpaperhub.Model.BrowseModel;
-import com.wallpaperhub.akaks09developers.wallpaperhub.Model.weekModel;
 import com.wallpaperhub.akaks09developers.wallpaperhub.R;
 
 import java.util.List;
@@ -66,7 +64,7 @@ public class BrowseAdapter extends RecyclerView.Adapter<BrowseAdapter.BrowseHold
 
     public static class BrowseHolder extends RecyclerView.ViewHolder {
         ImageView B_imageView ;
-        RelativeLayout relativeLayout;
+        ConstraintLayout relativeLayout;
 
         public BrowseHolder(View itemView) {
             super(itemView);

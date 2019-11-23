@@ -1,28 +1,23 @@
 package com.wallpaperhub.akaks09developers.wallpaperhub.Category_Activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.wallpaperhub.akaks09developers.wallpaperhub.Adapter.CategoryAdapter;
-import com.wallpaperhub.akaks09developers.wallpaperhub.Adapter.weekAdapter;
 import com.wallpaperhub.akaks09developers.wallpaperhub.Model.CategoryModel;
-import com.wallpaperhub.akaks09developers.wallpaperhub.Model.weekModel;
 import com.wallpaperhub.akaks09developers.wallpaperhub.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
