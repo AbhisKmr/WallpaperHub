@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -14,21 +15,32 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.wallpaperhub.akaks09developers.wallpaperhub.R;
+import com.wallpaperhub.akaks09developers.wallpaperhub.Utility.AppConstant;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class weekFullView extends AppCompatActivity {
     FloatingActionButton fab_more, Fab_download, Fab_Share, FabSetW;
     Animation FabOpen, FabClose, FabRClockwise, FabRAnticlockwise;
     boolean isOpen = false;
     private static int REQUEST_CODE = 1;
+
+    private FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private DatabaseReference myRef = database.getReference(AppConstant.SUPER_PARENT_KEY);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +51,7 @@ public class weekFullView extends AppCompatActivity {
                 Manifest.permission.WRITE_EXTERNAL_STORAGE
         }, REQUEST_CODE);
 
+        final String android_id = Settings.Secure.getString(this.getContentResolver(),Settings.Secure.ANDROID_ID);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -68,17 +81,21 @@ public class weekFullView extends AppCompatActivity {
                 if (isOpen) {
                     Fab_download.startAnimation(FabClose);
                     FabSetW.startAnimation(FabClose);
+                    Fab_Share.startAnimation(FabClose);
                     fab_more.startAnimation(FabRAnticlockwise);
                     Fab_download.setClickable(false);
                     FabSetW.setClickable(false);
+                    Fab_Share.setClickable(false);
                     isOpen = false;
 
                 } else {
                     Fab_download.startAnimation(FabOpen);
                     FabSetW.startAnimation(FabOpen);
+                    Fab_Share.startAnimation(FabOpen);
                     fab_more.startAnimation(FabRClockwise);
                     Fab_download.setClickable(true);
                     FabSetW.setClickable(true);
+                    Fab_Share.setClickable(true);
                     isOpen = true;
                 }
             }
@@ -98,7 +115,7 @@ public class weekFullView extends AppCompatActivity {
 
 
                 } catch (IOException ex) {
-
+                    ex.printStackTrace();
                 }
             }
         });
@@ -116,10 +133,14 @@ public class weekFullView extends AppCompatActivity {
                 request.setDestinationInExternalPublicDir("/Download", "wallpaperHub.jpg");
                 DownloadManager dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
                 dm.enqueue(request);
+            }
+        });
 
-
+        Fab_Share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myRef.child(AppConstant.USERS).child(android_id).push().setValue(img_url);
             }
         });
     }
-
 }

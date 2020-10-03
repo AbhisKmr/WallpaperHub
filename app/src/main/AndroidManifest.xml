@@ -14,7 +14,6 @@
         android:roundIcon="@drawable/wallpaperhubicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.BrowseFullView"></activity>
         <activity android:name=".Category_Activity.wildlife" />
         <activity android:name=".Category_Activity.water" />
         <activity android:name=".Category_Activity.road" />

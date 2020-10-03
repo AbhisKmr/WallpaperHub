@@ -1,6 +1,7 @@
 package com.wallpaperhub.akaks09developers.wallpaperhub.Activity;
 
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.Toast;
@@ -14,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.wallpaperhub.akaks09developers.wallpaperhub.Model.weekModel;
 import com.wallpaperhub.akaks09developers.wallpaperhub.R;
 
@@ -38,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
         mNavView = findViewById(R.id.main_nav);
         frameLayout =findViewById(R.id.main_frame);
 
+        String android_id = Settings.Secure.getString(this.getContentResolver(),Settings.Secure.ANDROID_ID);
+
+//        myRef.setValue(android_id);
 
         homeFragment = new HomeFragment();
         browseFragment = new BrowseFragment();

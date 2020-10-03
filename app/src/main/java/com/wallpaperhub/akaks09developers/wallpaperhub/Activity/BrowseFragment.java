@@ -1,6 +1,8 @@
 package com.wallpaperhub.akaks09developers.wallpaperhub.Activity;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +16,15 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.wallpaperhub.akaks09developers.wallpaperhub.Adapter.BrowseAdapter;
 import com.wallpaperhub.akaks09developers.wallpaperhub.Model.BrowseModel;
 import com.wallpaperhub.akaks09developers.wallpaperhub.R;
+import com.wallpaperhub.akaks09developers.wallpaperhub.Utility.AppConstant;
 
 
 import org.json.JSONArray;
@@ -26,11 +34,25 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.content.ContentValues.TAG;
 
 public class BrowseFragment extends Fragment {
+
     private List<BrowseModel> B_lst;
     private RecyclerView B_recyclerView;
+    private Context context;
+    BrowseAdapter browseAdapter;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference(AppConstant.SUPER_PARENT_KEY);
+
     public BrowseFragment(){
+
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.context = context;
     }
 
     @Override
@@ -39,45 +61,32 @@ public class BrowseFragment extends Fragment {
 
         B_lst = new ArrayList<>();
         B_recyclerView = v.findViewById(R.id.B_Recycler);
-        jsonrequest();
+        setuprecycler(B_lst);
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                B_lst.clear();
+                for (DataSnapshot ds : dataSnapshot.child(AppConstant.PARENT_KEY).child(AppConstant.BROWSE_KEY).getChildren()){
+                    B_lst.add(ds.getValue(BrowseModel.class));
+                }
+                browseAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+
         return v;
     }
 
-
-    private void jsonrequest() {
-        String B_JSON_URL = "https://raw.githubusercontent.com/AbhisKmr/alpha/master/browse.json";
-        JsonArrayRequest request = new JsonArrayRequest(B_JSON_URL, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
-                JSONObject jsonObject = null;
-                for (int b = 0; b < response.length(); b++) {
-                    try {
-                        jsonObject = response.getJSONObject(b);
-                        BrowseModel browseModel = new BrowseModel();
-                        browseModel.setImage_link(jsonObject.getString("b_img"));
-                        B_lst.add(browseModel);
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-
-                setuprecycler(B_lst);
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-            }
-        });
-        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-        requestQueue.add(request);
-    }
-
     private void setuprecycler(List<BrowseModel> b_lst) {
-        BrowseAdapter browseAdapter = new BrowseAdapter(getContext(),b_lst);
-        B_recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
+        browseAdapter = new BrowseAdapter(context,b_lst);
+        B_recyclerView.setLayoutManager(new GridLayoutManager(context,2));
         B_recyclerView.setAdapter(browseAdapter);
     }
 

@@ -8,12 +8,57 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:493438208158:android:c29d824911c190df2fd38f",
+        "android_client_info": {
+          "package_name": "com.amazingabhishek.tourindia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "493438208158-q6h91kne48i8uu31otmvpmbslkk2s7pj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoHHJ-D-TTvPgcdE820sC7eR5svvAbTTs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "493438208158-q6h91kne48i8uu31otmvpmbslkk2s7pj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:493438208158:android:ec7a278385e773722fd38f",
         "android_client_info": {
           "package_name": "com.wallpaperhub.akaks09developers.wallpaperhub"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "493438208158-3d17fn882q0vnl7htdfkfm2tskqodv12.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wallpaperhub.akaks09developers.wallpaperhub",
+            "certificate_hash": "bc2bcce0a8db69cef68e4a651d488aaf8e542037"
+          }
+        },
+        {
+          "client_id": "493438208158-t73cij9cf98u5nh645rtk83jbp0evrgu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wallpaperhub.akaks09developers.wallpaperhub",
+            "certificate_hash": "857bea9289670b4130a0efd9a6a250a27c6bbf6d"
+          }
+        },
         {
           "client_id": "493438208158-q6h91kne48i8uu31otmvpmbslkk2s7pj.apps.googleusercontent.com",
           "client_type": 3

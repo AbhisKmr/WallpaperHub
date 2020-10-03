@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.wallpaperhub.akaks09developers.wallpaperhub.Activity.BrowseFullView;
+import com.wallpaperhub.akaks09developers.wallpaperhub.Activity.weekFullView;
 import com.wallpaperhub.akaks09developers.wallpaperhub.Model.BrowseModel;
 import com.wallpaperhub.akaks09developers.wallpaperhub.R;
 
@@ -42,8 +42,8 @@ public class BrowseAdapter extends RecyclerView.Adapter<BrowseAdapter.BrowseHold
         browseHolder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(bContext, BrowseFullView.class);
-                intent.putExtra("image_link",bData.get(browseHolder.getAdapterPosition()).getImage_link());
+                Intent intent = new Intent(bContext, weekFullView.class);
+                intent.putExtra("img_url",bData.get(browseHolder.getAdapterPosition()).getB_img());
                 bContext.startActivity(intent);
             }
         });
@@ -52,8 +52,7 @@ public class BrowseAdapter extends RecyclerView.Adapter<BrowseAdapter.BrowseHold
 
     @Override
     public void onBindViewHolder(@NonNull BrowseHolder holder, int position) {
-        Glide.with(bContext).load(bData.get(position).getImage_link()).apply(b_options).into(holder.B_imageView);
-
+        Glide.with(bContext).load(bData.get(position).getB_img()).apply(b_options).into(holder.B_imageView);
 
     }
 
